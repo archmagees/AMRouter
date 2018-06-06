@@ -1,0 +1,27 @@
+PODS:
+  - AMRouter (0.0.2)
+  - Nimble (7.1.1)
+  - OCMock (3.4.1)
+  - Quick (1.3.0)
+
+DEPENDENCIES:
+  - AMRouter (from `./`)
+  - Nimble
+  - OCMock
+  - Quick
+
+EXTERNAL SOURCES:
+  AMRouter:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  AMRouter: ebe35decd4a4f994f50027be242cb389c19ee0ee
+  Nimble: 391f07782af4b37914f9bd7b2ffbb952731b8202
+  OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
+  Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
+
+PODFILE CHECKSUM: 449e90667f4390c9f1de16eb2ac5078a73de3c8d
+
+COCOAPODS: 1.5.3
+
+COCOAPODS DEPLOY: 0.0.11

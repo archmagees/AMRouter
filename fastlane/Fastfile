@@ -1,0 +1,52 @@
+PROJECT      = "AMRouter"
+SCHEME       = "#{PROJECT}"
+XCWORKSPACE  = "#{PROJECT}.xcworkspace"
+XCODEPROJ    = "#{PROJECT}.xcodeproj"
+
+default_platform(:ios)
+
+platform :ios do
+############################################################
+#########################  TEST  ###########################
+############################################################
+  desc "Runs all the tests"
+  lane :test do |options|
+    env_ci = options[:env_ci]
+    travis = options[:travis]
+    scan(
+      scheme: SCHEME,
+      devices: "iPhone 7",
+      code_coverage: true
+    )
+    code_coverage(
+      env_ci: env_ci,
+      travis: travis
+    )
+  end
+
+############################################################
+#####################  Code Coverage  ######################
+############################################################
+
+  desc "Run slather to generate a code coverage report"
+  lane :code_coverage do |options|
+   	env_ci    = options[:env_ci]
+   	travis    = options[:travis]
+  	slather(
+         cobertura_xml: env_ci,
+         html: !env_ci,
+         show: !env_ci,
+         travis: travis,
+         source_files: "#{PROJECT}/#{PROJECT}/*",
+         output_directory: "fastlane/test_output/code_coverage/slather/",
+         scheme: SCHEME,
+         workspace: XCWORKSPACE,
+         proj: XCODEPROJ,
+         ignore: [
+           "Pods/*" 
+         ]
+    )
+  end
+end
+
+

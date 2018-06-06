@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08487ED26C85DCE8CD12A028 /* Pods_AMRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15739CBAC9C87DFC97D7132B /* Pods_AMRouter.framework */; };
+		20EB12DE1B6F47335102123D /* Pods_AMRouterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CB695E91B9E9101246A87 /* Pods_AMRouterTests.framework */; };
+		8EDB60CB20C7C6BE00EB2CBA /* SwiftSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60CA20C7C6BE00EB2CBA /* SwiftSpec.swift */; };
+		8EDB60CD20C7C72900EB2CBA /* AMComponentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60CC20C7C72900EB2CBA /* AMComponentSpec.m */; };
+		8EDC786F20C7C294001A3427 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC786E20C7C294001A3427 /* AppDelegate.m */; };
+		8EDC787220C7C294001A3427 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC787120C7C294001A3427 /* ViewController.m */; };
+		8EDC787520C7C294001A3427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EDC787320C7C294001A3427 /* Main.storyboard */; };
+		8EDC787720C7C296001A3427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDC787620C7C296001A3427 /* Assets.xcassets */; };
+		8EDC787A20C7C296001A3427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EDC787820C7C296001A3427 /* LaunchScreen.storyboard */; };
+		8EDC787D20C7C296001A3427 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC787C20C7C296001A3427 /* main.m */; };
+		8EDC789D20C7C387001A3427 /* MessageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC789920C7C387001A3427 /* MessageComponent.m */; };
+		8EDC789E20C7C387001A3427 /* AMComponent+Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC789A20C7C387001A3427 /* AMComponent+Message.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EDC788320C7C296001A3427 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EDC786220C7C294001A3427 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EDC786920C7C294001A3427;
+			remoteInfo = AMRouter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15739CBAC9C87DFC97D7132B /* Pods_AMRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		214DF5B71F3D612A1855B26E /* Pods-AMRouterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMRouterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AMRouterTests/Pods-AMRouterTests.release.xcconfig"; sourceTree = "<group>"; };
+		4D8F68259374D8D26C761A42 /* Pods-AMRouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMRouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-AMRouter/Pods-AMRouter.release.xcconfig"; sourceTree = "<group>"; };
+		8EDB60C920C7C6BE00EB2CBA /* AMRouterTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMRouterTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		8EDB60CA20C7C6BE00EB2CBA /* SwiftSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSpec.swift; sourceTree = "<group>"; };
+		8EDB60CC20C7C72900EB2CBA /* AMComponentSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMComponentSpec.m; sourceTree = "<group>"; };
+		8EDC786A20C7C294001A3427 /* AMRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EDC786D20C7C294001A3427 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8EDC786E20C7C294001A3427 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8EDC787020C7C294001A3427 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8EDC787120C7C294001A3427 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8EDC787420C7C294001A3427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8EDC787620C7C296001A3427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EDC787920C7C296001A3427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8EDC787B20C7C296001A3427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EDC787C20C7C296001A3427 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8EDC788220C7C296001A3427 /* AMRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EDC788820C7C296001A3427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EDC789820C7C387001A3427 /* MessageComponentInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageComponentInterface.h; sourceTree = "<group>"; };
+		8EDC789920C7C387001A3427 /* MessageComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageComponent.m; sourceTree = "<group>"; };
+		8EDC789A20C7C387001A3427 /* AMComponent+Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AMComponent+Message.m"; sourceTree = "<group>"; };
+		8EDC789B20C7C387001A3427 /* AMComponent+Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMComponent+Message.h"; sourceTree = "<group>"; };
+		8EDC789C20C7C387001A3427 /* MessageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageComponent.h; sourceTree = "<group>"; };
+		8EDC789F20C7C551001A3427 /* AMRouter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AMRouter.podspec; sourceTree = "<group>"; };
+		C4A5B7AE5C0D2F9AB7A03A6D /* Pods-AMRouterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMRouterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AMRouterTests/Pods-AMRouterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC8985E85ACED1480D3FAFAB /* Pods-AMRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMRouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AMRouter/Pods-AMRouter.debug.xcconfig"; sourceTree = "<group>"; };
+		D98CB695E91B9E9101246A87 /* Pods_AMRouterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMRouterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8EDC786720C7C294001A3427 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08487ED26C85DCE8CD12A028 /* Pods_AMRouter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EDC787F20C7C296001A3427 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20EB12DE1B6F47335102123D /* Pods_AMRouterTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17C45BD6F115941CA1BA8BE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15739CBAC9C87DFC97D7132B /* Pods_AMRouter.framework */,
+				D98CB695E91B9E9101246A87 /* Pods_AMRouterTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85313BF07A71F864C6C6E3D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC8985E85ACED1480D3FAFAB /* Pods-AMRouter.debug.xcconfig */,
+				4D8F68259374D8D26C761A42 /* Pods-AMRouter.release.xcconfig */,
+				C4A5B7AE5C0D2F9AB7A03A6D /* Pods-AMRouterTests.debug.xcconfig */,
+				214DF5B71F3D612A1855B26E /* Pods-AMRouterTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8EDB60C820C7C68D00EB2CBA /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC788820C7C296001A3427 /* Info.plist */,
+				8EDB60CA20C7C6BE00EB2CBA /* SwiftSpec.swift */,
+				8EDB60C920C7C6BE00EB2CBA /* AMRouterTests-Bridging-Header.h */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		8EDC786120C7C294001A3427 = {
+			isa = PBXGroup;
+			children = (
+				8EDC789F20C7C551001A3427 /* AMRouter.podspec */,
+				8EDC786C20C7C294001A3427 /* AMRouter */,
+				8EDC788520C7C296001A3427 /* AMRouterTests */,
+				8EDC786B20C7C294001A3427 /* Products */,
+				85313BF07A71F864C6C6E3D6 /* Pods */,
+				17C45BD6F115941CA1BA8BE2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8EDC786B20C7C294001A3427 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC786A20C7C294001A3427 /* AMRouter.app */,
+				8EDC788220C7C296001A3427 /* AMRouterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EDC786C20C7C294001A3427 /* AMRouter */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC789620C7C387001A3427 /* Components */,
+				8EDC786D20C7C294001A3427 /* AppDelegate.h */,
+				8EDC786E20C7C294001A3427 /* AppDelegate.m */,
+				8EDC787020C7C294001A3427 /* ViewController.h */,
+				8EDC787120C7C294001A3427 /* ViewController.m */,
+				8EDC787320C7C294001A3427 /* Main.storyboard */,
+				8EDC787620C7C296001A3427 /* Assets.xcassets */,
+				8EDC787820C7C296001A3427 /* LaunchScreen.storyboard */,
+				8EDC787B20C7C296001A3427 /* Info.plist */,
+				8EDC787C20C7C296001A3427 /* main.m */,
+			);
+			path = AMRouter;
+			sourceTree = "<group>";
+		};
+		8EDC788520C7C296001A3427 /* AMRouterTests */ = {
+			isa = PBXGroup;
+			children = (
+				8EDB60C820C7C68D00EB2CBA /* Misc */,
+				8EDB60CC20C7C72900EB2CBA /* AMComponentSpec.m */,
+			);
+			path = AMRouterTests;
+			sourceTree = "<group>";
+		};
+		8EDC789620C7C387001A3427 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC789720C7C387001A3427 /* Message */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8EDC789720C7C387001A3427 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC789820C7C387001A3427 /* MessageComponentInterface.h */,
+				8EDC789B20C7C387001A3427 /* AMComponent+Message.h */,
+				8EDC789A20C7C387001A3427 /* AMComponent+Message.m */,
+				8EDC789C20C7C387001A3427 /* MessageComponent.h */,
+				8EDC789920C7C387001A3427 /* MessageComponent.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8EDC786920C7C294001A3427 /* AMRouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EDC788B20C7C296001A3427 /* Build configuration list for PBXNativeTarget "AMRouter" */;
+			buildPhases = (
+				690ECDF5088C01E687641D65 /* [CP] Check Pods Manifest.lock */,
+				8EDC786620C7C294001A3427 /* Sources */,
+				8EDC786720C7C294001A3427 /* Frameworks */,
+				8EDC786820C7C294001A3427 /* Resources */,
+				4013D45D6DC8683EFECD567C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AMRouter;
+			productName = AMRouter;
+			productReference = 8EDC786A20C7C294001A3427 /* AMRouter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8EDC788120C7C296001A3427 /* AMRouterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EDC788E20C7C296001A3427 /* Build configuration list for PBXNativeTarget "AMRouterTests" */;
+			buildPhases = (
+				B4F8C8163BCFF418BF3F817D /* [CP] Check Pods Manifest.lock */,
+				8EDC787E20C7C296001A3427 /* Sources */,
+				8EDC787F20C7C296001A3427 /* Frameworks */,
+				8EDC788020C7C296001A3427 /* Resources */,
+				742BF33A63C9231CA126612E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EDC788420C7C296001A3427 /* PBXTargetDependency */,
+			);
+			name = AMRouterTests;
+			productName = AMRouterTests;
+			productReference = 8EDC788220C7C296001A3427 /* AMRouterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8EDC786220C7C294001A3427 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = archmagees;
+				TargetAttributes = {
+					8EDC786920C7C294001A3427 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					8EDC788120C7C296001A3427 = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+						TestTargetID = 8EDC786920C7C294001A3427;
+					};
+				};
+			};
+			buildConfigurationList = 8EDC786520C7C294001A3427 /* Build configuration list for PBXProject "AMRouter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8EDC786120C7C294001A3427;
+			productRefGroup = 8EDC786B20C7C294001A3427 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EDC786920C7C294001A3427 /* AMRouter */,
+				8EDC788120C7C296001A3427 /* AMRouterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EDC786820C7C294001A3427 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EDC787A20C7C296001A3427 /* LaunchScreen.storyboard in Resources */,
+				8EDC787720C7C296001A3427 /* Assets.xcassets in Resources */,
+				8EDC787520C7C294001A3427 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EDC788020C7C296001A3427 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4013D45D6DC8683EFECD567C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AMRouter/Pods-AMRouter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AMRouter/AMRouter.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMRouter.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AMRouter/Pods-AMRouter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		690ECDF5088C01E687641D65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AMRouter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		742BF33A63C9231CA126612E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AMRouterTests/Pods-AMRouterTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AMRouterTests/Pods-AMRouterTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4F8C8163BCFF418BF3F817D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AMRouterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EDC786620C7C294001A3427 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EDC787220C7C294001A3427 /* ViewController.m in Sources */,
+				8EDC789D20C7C387001A3427 /* MessageComponent.m in Sources */,
+				8EDC787D20C7C296001A3427 /* main.m in Sources */,
+				8EDC786F20C7C294001A3427 /* AppDelegate.m in Sources */,
+				8EDC789E20C7C387001A3427 /* AMComponent+Message.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EDC787E20C7C296001A3427 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EDB60CD20C7C72900EB2CBA /* AMComponentSpec.m in Sources */,
+				8EDB60CB20C7C6BE00EB2CBA /* SwiftSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EDC788420C7C296001A3427 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EDC786920C7C294001A3427 /* AMRouter */;
+			targetProxy = 8EDC788320C7C296001A3427 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8EDC787320C7C294001A3427 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EDC787420C7C294001A3427 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8EDC787820C7C296001A3427 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EDC787920C7C296001A3427 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8EDC788920C7C296001A3427 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8EDC788A20C7C296001A3427 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8EDC788C20C7C296001A3427 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC8985E85ACED1480D3FAFAB /* Pods-AMRouter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P82ZK576JR;
+				INFOPLIST_FILE = AMRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.archmagees.AMRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EDC788D20C7C296001A3427 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8F68259374D8D26C761A42 /* Pods-AMRouter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P82ZK576JR;
+				INFOPLIST_FILE = AMRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.archmagees.AMRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8EDC788F20C7C296001A3427 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4A5B7AE5C0D2F9AB7A03A6D /* Pods-AMRouterTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P82ZK576JR;
+				INFOPLIST_FILE = AMRouterTests/Misc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.archmagees.AMRouterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMRouterTests/Misc/AMRouterTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AMRouter.app/AMRouter";
+			};
+			name = Debug;
+		};
+		8EDC789020C7C296001A3427 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 214DF5B71F3D612A1855B26E /* Pods-AMRouterTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P82ZK576JR;
+				INFOPLIST_FILE = AMRouterTests/Misc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.archmagees.AMRouterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMRouterTests/Misc/AMRouterTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AMRouter.app/AMRouter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EDC786520C7C294001A3427 /* Build configuration list for PBXProject "AMRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EDC788920C7C296001A3427 /* Debug */,
+				8EDC788A20C7C296001A3427 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EDC788B20C7C296001A3427 /* Build configuration list for PBXNativeTarget "AMRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EDC788C20C7C296001A3427 /* Debug */,
+				8EDC788D20C7C296001A3427 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EDC788E20C7C296001A3427 /* Build configuration list for PBXNativeTarget "AMRouterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EDC788F20C7C296001A3427 /* Debug */,
+				8EDC789020C7C296001A3427 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8EDC786220C7C294001A3427 /* Project object */;
+}

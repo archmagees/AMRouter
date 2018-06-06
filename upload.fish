@@ -8,9 +8,13 @@ function ask_pod_version
   read -P "Please set pod version:" -s $pod_version
 end
 
-while not string length -q -i '[0-99].[0-99].[0-99]' $pod_version
-  set pod_version
+# while not test \( string match -q '\d\d{0,1}[.]\d\d{0,1}[.]\d\d{0,1}' $pod_version \)
+  # set pod_version
   ask_pod_version
+# end
+
+if not set $pod_version
+  exit 1
 end
 
 git stash

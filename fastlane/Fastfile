@@ -37,6 +37,8 @@ platform :ios do
          html: !env_ci,
          show: !env_ci,
          travis: travis,
+         
+          
          source_files: "#{PROJECT}/#{PROJECT}/*",
          output_directory: "fastlane/test_output/code_coverage/slather/",
          scheme: SCHEME,

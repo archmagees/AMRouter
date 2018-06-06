@@ -10,6 +10,7 @@
 @import Nimble;
 #import "AMComponent+Message.h"
 #import "MessageComponent.h"
+#import "AMMessageComponent.h"
 
 QuickSpecBegin(AMComponentSpec)
 
@@ -20,6 +21,7 @@ context(@"There is a component message", ^{
         expect(obj).to(beAKindOf([MessageComponent class]));
         
         expect(obj.notificationEnabled).to(beTrue());
+        expect(obj.unreadCount).to(equal(3));
         
     });
     
@@ -36,8 +38,36 @@ context(@"There is a component message", ^{
         expect(obj1).to(beAKindOf([MessageComponent class]));
         expect(obj3).to(beAKindOf([MessageComponent class]));
         expect(obj3).toNot(beIdenticalTo(obj1));
+    });
+    
+    it(@"register different class prefix", ^ {
         
+        [AMComponent registerClassPrefix:@"AM"];
+        AMMessageComponent *amObj = [AMComponent message];
+        expect(amObj).to(beAKindOf([AMMessageComponent class]));
+        expect(amObj.notificationEnabled).to(beFalse());
         
+        [AMComponent registerClassPrefix:@""];
+        MessageComponent *nonClassPrefixObj = [AMComponent message];
+        
+        expect(nonClassPrefixObj).to(beAKindOf([MessageComponent class]));
+        
+        [[AMComponent sharedInstance] releaseCachedTarget:@"Message"];
+        
+        [AMComponent registerClassPrefix:@"AM"];
+        
+        AMMessageComponent *classPrefixObj = [AMComponent message];
+        expect(classPrefixObj).to(beIdenticalTo(amObj));
+        
+        expect(classPrefixObj.unreadCount).to(equal(999));
+        
+    });
+    
+    it(@"should return nil", ^ {
+       id obj = [AMComponent openUrl:@""
+                            userInfo:nil
+                          completion:nil];
+        expect(obj).to(beNil());
     });
 });
 

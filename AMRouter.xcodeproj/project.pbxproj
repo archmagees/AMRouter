@@ -12,6 +12,7 @@
 		8EDB60CB20C7C6BE00EB2CBA /* SwiftSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60CA20C7C6BE00EB2CBA /* SwiftSpec.swift */; };
 		8EDB60CD20C7C72900EB2CBA /* AMComponentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60CC20C7C72900EB2CBA /* AMComponentSpec.m */; };
 		8EDB60D220C7D3FE00EB2CBA /* AMComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60D120C7D3FE00EB2CBA /* AMComponent.m */; };
+		8EDB60D520C7EEA800EB2CBA /* AMMessageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60D420C7EEA800EB2CBA /* AMMessageComponent.m */; };
 		8EDC786F20C7C294001A3427 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC786E20C7C294001A3427 /* AppDelegate.m */; };
 		8EDC787220C7C294001A3427 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC787120C7C294001A3427 /* ViewController.m */; };
 		8EDC787520C7C294001A3427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EDC787320C7C294001A3427 /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 		8EDB60CF20C7D3FE00EB2CBA /* AMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMRouter.h; sourceTree = "<group>"; };
 		8EDB60D020C7D3FE00EB2CBA /* AMComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMComponent.h; sourceTree = "<group>"; };
 		8EDB60D120C7D3FE00EB2CBA /* AMComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMComponent.m; sourceTree = "<group>"; };
+		8EDB60D320C7EEA800EB2CBA /* AMMessageComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMMessageComponent.h; sourceTree = "<group>"; };
+		8EDB60D420C7EEA800EB2CBA /* AMMessageComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMMessageComponent.m; sourceTree = "<group>"; };
 		8EDC786A20C7C294001A3427 /* AMRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDC786D20C7C294001A3427 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8EDC786E20C7C294001A3427 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				8EDC789A20C7C387001A3427 /* AMComponent+Message.m */,
 				8EDC789C20C7C387001A3427 /* MessageComponent.h */,
 				8EDC789920C7C387001A3427 /* MessageComponent.m */,
+				8EDB60D320C7EEA800EB2CBA /* AMMessageComponent.h */,
+				8EDB60D420C7EEA800EB2CBA /* AMMessageComponent.m */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EDB60D520C7EEA800EB2CBA /* AMMessageComponent.m in Sources */,
 				8EDC787220C7C294001A3427 /* ViewController.m in Sources */,
 				8EDC789D20C7C387001A3427 /* MessageComponent.m in Sources */,
 				8EDC787D20C7C296001A3427 /* main.m in Sources */,

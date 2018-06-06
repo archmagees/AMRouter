@@ -14,4 +14,8 @@
     return YES;
 }
 
+- (NSInteger)unreadCount {
+    return 3;
+}
+
 @end

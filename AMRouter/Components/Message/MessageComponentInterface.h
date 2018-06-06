@@ -14,4 +14,6 @@
 
 - (BOOL)notificationEnabled;
 
+- (NSInteger)unreadCount;
+
 @end

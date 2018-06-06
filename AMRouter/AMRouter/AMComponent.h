@@ -25,14 +25,15 @@ typedef void(^AMComponentCompletion)(NSDictionary *info);
  * This method should be invoked in the very beginning of the app.
  *
  * @param classPrefix
- * The specific class prefix of your app.
+ * The specific class prefix of your app. If it is nil or empty, means to clear
+ * the class prefix.
  *
  * @attention
  * If your module has class prefix then you should invoke this before using this
  * class. You can invoke it multiply if you have several different classPrefix.
  * You just invoke it before invoking `-targetWithName` method.
  */
-+ (void)registerClassPrefix:(NSString *)classPrefix;
++ (void)registerClassPrefix:(nullable NSString *)classPrefix;
 
 /**
  * @brief Initialize an object by url.

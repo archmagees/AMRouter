@@ -16,7 +16,7 @@ static AMComponent *sharedInstance = nil;
 @interface AMComponent ()
 
 @property (nonatomic, strong) NSMutableDictionary<NSString *, __kindof NSObject *> *cachedTargets;
-@property (nonatomic, copy, nullable) NSString *classPrefix;
+@property (nonatomic, copy, null_resettable) NSString *classPrefix;
 
 @end
 
@@ -45,9 +45,8 @@ static AMComponent *sharedInstance = nil;
 
 #pragma mark - Public
 
-+ (void)registerClassPrefix:(NSString *)classPrefix {
-    NSAssert(classPrefix.length > 0, @"class prefix should not be nil, %s", __FUNCTION__);
-    // now it can be invoked multiply
++ (void)registerClassPrefix:(nullable NSString *)classPrefix {
+    // now it can be invoked multiply, it could be nil
     [[self sharedInstance] setClassPrefix:classPrefix];
 }
 
@@ -61,31 +60,39 @@ static AMComponent *sharedInstance = nil;
 
 - (id)targetWithName:(NSString *)targetName {
     
-    _Nullable id target = self.cachedTargets[targetName];
+    NSString *className = [self classNameForTarget:targetName];
+    
+    _Nullable id target = self.cachedTargets[className];
     
     if (target) {
         return target;
     }
     
-    NSString *className = [self classNameForTarget:targetName];
     Class targetClass = NSClassFromString(className);
     
     target = [[[targetClass class] alloc] init];
     
-    self.cachedTargets[targetName] = target;
+    self.cachedTargets[className] = target;
     return target;
 }
 
 
 - (void)releaseCachedTarget:(NSString *)targetName {
-    [self.cachedTargets removeObjectForKey:targetName];
+    [self.cachedTargets removeObjectForKey:[self classNameForTarget:targetName]];
 }
 
 #pragma mark - Private
 
 - (NSString *)classNameForTarget:(NSString *)targetName {
-    NSString *classPrefix = self.classPrefix ?: @"";
-    return [NSString stringWithFormat:@"%@%@Component", classPrefix, targetName];
+    return [NSString stringWithFormat:@"%@%@Component",
+            self.classPrefix, targetName];
+}
+
+- (NSString *)classPrefix {
+    if (!_classPrefix) {
+        _classPrefix = @"";
+    }
+    return _classPrefix;
 }
 
 @end

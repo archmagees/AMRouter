@@ -29,7 +29,6 @@ platform :ios do
   desc "Run slather to generate a code coverage report"
   lane :code_coverage do |options|
    	env_ci    = options[:env_ci]
-   	travis    = options[:travis]
   	slather(
          cobertura_xml: env_ci,
          html: !env_ci,
@@ -45,7 +44,7 @@ platform :ios do
     )
   end
 
-  lane :test_in_bitrise do
+  lane :test_in_ci do
     test(
       env_ci: true
     )

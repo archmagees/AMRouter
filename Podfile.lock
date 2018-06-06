@@ -1,5 +1,5 @@
 PODS:
-  - AMRouter (0.0.2)
+  - AMRouter (0.1.0)
   - Nimble (7.1.1)
   - OCMock (3.4.1)
   - Quick (1.3.0)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  AMRouter: ebe35decd4a4f994f50027be242cb389c19ee0ee
+  AMRouter: c879923419afaecc7f64deafa8f5efe6acc23524
   Nimble: 391f07782af4b37914f9bd7b2ffbb952731b8202
   OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f

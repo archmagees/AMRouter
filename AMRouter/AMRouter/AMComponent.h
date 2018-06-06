@@ -29,13 +29,10 @@ typedef void(^AMComponentCompletion)(NSDictionary *info);
  *
  * @attention
  * If your module has class prefix then you should invoke this before using this
- * class.
- *
- * @todo
- * Implement func.
+ * class. You can invoke it multiply if you have several different classPrefix.
+ * You just invoke it before invoking `-targetWithName` method.
  */
 + (void)registerClassPrefix:(NSString *)classPrefix;
-
 
 /**
  * @brief Initialize an object by url.
@@ -56,10 +53,27 @@ typedef void(^AMComponentCompletion)(NSDictionary *info);
               userInfo:(nullable NSDictionary *)userInfo
             completion:(nullable AMComponentCompletion)completion;
 
+/**
+ * @brief Get the component instance, and it is cached.
+ * @discussion
+ * The instance's class name's format is like this:
+ * `ClassPrefix(if exists)+TargetName+Component`.
+ *
+ * @param targetName
+ * Indicates the return value class.
+ *
+ * @return
+ * An instance which class is `ClassPrefix+TargetName+Component`.
+ */
 - (id)targetWithName:(NSString *)targetName;
 
+/**
+ * @brief Release the cached target.
+ *
+ * @param targetName
+ * Key for the cached target in dictionary.
+ */
 - (void)releaseCachedTarget:(NSString *)targetName;
-
 
 @end
 

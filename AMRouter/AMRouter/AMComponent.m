@@ -46,11 +46,9 @@ static AMComponent *sharedInstance = nil;
 #pragma mark - Public
 
 + (void)registerClassPrefix:(NSString *)classPrefix {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSAssert(classPrefix.length > 0, @"class prefix should not be nil, %s", __FUNCTION__);
-        [[self sharedInstance] setClassPrefix:classPrefix];
-    });
+    NSAssert(classPrefix.length > 0, @"class prefix should not be nil, %s", __FUNCTION__);
+    // now it can be invoked multiply
+    [[self sharedInstance] setClassPrefix:classPrefix];
 }
 
 + (nullable id)openUrl:(NSString *)url
@@ -86,7 +84,8 @@ static AMComponent *sharedInstance = nil;
 #pragma mark - Private
 
 - (NSString *)classNameForTarget:(NSString *)targetName {
-    return [NSString stringWithFormat:@"%@Component", targetName];
+    NSString *classPrefix = self.classPrefix ?: @"";
+    return [NSString stringWithFormat:@"%@%@Component", classPrefix, targetName];
 }
 
 @end

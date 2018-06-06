@@ -22,6 +22,23 @@ context(@"There is a component message", ^{
         expect(obj.notificationEnabled).to(beTrue());
         
     });
+    
+    it(@"should release the target after invoke method -release...", ^ {
+        
+        MessageComponent *obj1 = [AMComponent message];
+        MessageComponent *obj2 = [AMComponent message];
+        
+        expect(obj1).to(beIdenticalTo(obj2));
+        
+        [[AMComponent sharedInstance] releaseCachedTarget:@"Message"];
+        
+        MessageComponent *obj3 = [AMComponent message];
+        expect(obj1).to(beAKindOf([MessageComponent class]));
+        expect(obj3).to(beAKindOf([MessageComponent class]));
+        expect(obj3).toNot(beIdenticalTo(obj1));
+        
+        
+    });
 });
 
 QuickSpecEnd

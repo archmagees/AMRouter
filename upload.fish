@@ -18,10 +18,11 @@ if not set $pod_version
 end
 
 git stash
+git push -u
 git pull --tags
 git stash pop
 
-git all .
+git add .
 git commit -am ":bookmark: upgrade: version to $pod_version"
 git tag $pod_version
 

@@ -11,6 +11,7 @@
 		20EB12DE1B6F47335102123D /* Pods_AMRouterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CB695E91B9E9101246A87 /* Pods_AMRouterTests.framework */; };
 		8EDB60CB20C7C6BE00EB2CBA /* SwiftSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60CA20C7C6BE00EB2CBA /* SwiftSpec.swift */; };
 		8EDB60CD20C7C72900EB2CBA /* AMComponentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60CC20C7C72900EB2CBA /* AMComponentSpec.m */; };
+		8EDB60D220C7D3FE00EB2CBA /* AMComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60D120C7D3FE00EB2CBA /* AMComponent.m */; };
 		8EDC786F20C7C294001A3427 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC786E20C7C294001A3427 /* AppDelegate.m */; };
 		8EDC787220C7C294001A3427 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC787120C7C294001A3427 /* ViewController.m */; };
 		8EDC787520C7C294001A3427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EDC787320C7C294001A3427 /* Main.storyboard */; };
@@ -38,6 +39,9 @@
 		8EDB60C920C7C6BE00EB2CBA /* AMRouterTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMRouterTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EDB60CA20C7C6BE00EB2CBA /* SwiftSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSpec.swift; sourceTree = "<group>"; };
 		8EDB60CC20C7C72900EB2CBA /* AMComponentSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMComponentSpec.m; sourceTree = "<group>"; };
+		8EDB60CF20C7D3FE00EB2CBA /* AMRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMRouter.h; sourceTree = "<group>"; };
+		8EDB60D020C7D3FE00EB2CBA /* AMComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMComponent.h; sourceTree = "<group>"; };
+		8EDB60D120C7D3FE00EB2CBA /* AMComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMComponent.m; sourceTree = "<group>"; };
 		8EDC786A20C7C294001A3427 /* AMRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDC786D20C7C294001A3427 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8EDC786E20C7C294001A3427 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -111,6 +115,16 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		8EDB60CE20C7D3FE00EB2CBA /* AMRouter */ = {
+			isa = PBXGroup;
+			children = (
+				8EDB60CF20C7D3FE00EB2CBA /* AMRouter.h */,
+				8EDB60D020C7D3FE00EB2CBA /* AMComponent.h */,
+				8EDB60D120C7D3FE00EB2CBA /* AMComponent.m */,
+			);
+			path = AMRouter;
+			sourceTree = "<group>";
+		};
 		8EDC786120C7C294001A3427 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +149,7 @@
 		8EDC786C20C7C294001A3427 /* AMRouter */ = {
 			isa = PBXGroup;
 			children = (
+				8EDB60CE20C7D3FE00EB2CBA /* AMRouter */,
 				8EDC789620C7C387001A3427 /* Components */,
 				8EDC786D20C7C294001A3427 /* AppDelegate.h */,
 				8EDC786E20C7C294001A3427 /* AppDelegate.m */,
@@ -365,6 +380,7 @@
 				8EDC787220C7C294001A3427 /* ViewController.m in Sources */,
 				8EDC789D20C7C387001A3427 /* MessageComponent.m in Sources */,
 				8EDC787D20C7C296001A3427 /* main.m in Sources */,
+				8EDB60D220C7D3FE00EB2CBA /* AMComponent.m in Sources */,
 				8EDC786F20C7C294001A3427 /* AppDelegate.m in Sources */,
 				8EDC789E20C7C387001A3427 /* AMComponent+Message.m in Sources */,
 			);

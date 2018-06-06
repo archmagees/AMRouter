@@ -42,9 +42,9 @@ platform :ios do
          scheme: SCHEME,
          workspace: XCWORKSPACE,
          proj: XCODEPROJ,
-         ignore: [
-           "Pods/*" 
-         ]
+         # ignore: [
+         #   "Pods/*"
+         # ]
     )
   end
 end

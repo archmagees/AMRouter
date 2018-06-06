@@ -1,6 +1,0 @@
-framework module AMRouter {
-  umbrella header "AMRouter-umbrella.h"
-
-  export *
-  module * { export * }
-}

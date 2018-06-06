@@ -44,7 +44,7 @@ platform :ios do
     )
   end
 
-  lane :test_in_ci do
+  lane :test_in_bitrise do
     test(
       env_ci: true
     )

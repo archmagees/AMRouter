@@ -43,9 +43,7 @@ pod 'AMRouter'
    @end
    ```
 
-   Now let the class you created in step 1 conform the protocol you just created, then it should
-
-   be like this now:
+   Now let the class you created in step 1 conform the protocol you just created, then it should be like this now:
 
    ```objc
    #import <Foundation/Foundation.h>

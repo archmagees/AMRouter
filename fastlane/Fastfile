@@ -33,18 +33,19 @@ platform :ios do
          cobertura_xml: env_ci,
          html: !env_ci,
          show: !env_ci,
+         travis: env_ci,
          source_files: "#{PROJECT}/#{PROJECT}/*",
          output_directory: "fastlane/test_output/code_coverage/slather/",
          scheme: SCHEME,
          workspace: XCWORKSPACE,
          proj: XCODEPROJ,
-         # ignore: [
-         #   "Pods/*"
-         # ]
+         ignore: [
+           "Pods/*"
+         ]
     )
   end
 
-  lane :test_in_bitrise do
+  lane :test_in_travis do
     test(
       env_ci: true
     )

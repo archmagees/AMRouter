@@ -1,7 +1,7 @@
 # AMRouter
 
 [![Build Status](https://travis-ci.org/archmagees/AMRouter.svg?branch=develop)](https://travis-ci.org/archmagees/AMRouter)
-
+[![Coverage Status](https://coveralls.io/repos/github/archmagees/AMRouter/badge.svg?branch=develop)](https://coveralls.io/github/archmagees/AMRouter?branch=develop)
 [![Version](https://img.shields.io/cocoapods/v/AMRouter.svg?style=flat)](https://cocoapods.org/pods/AMRouter)
 [![License](https://img.shields.io/cocoapods/l/AMRouter.svg?style=flat)](https://cocoapods.org/pods/AMRouter)
 [![Platform](https://img.shields.io/cocoapods/p/AMRouter.svg?style=flat)](https://cocoapods.org/pods/AMRouter)

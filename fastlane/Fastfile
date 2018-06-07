@@ -55,8 +55,8 @@ platform :ios do
   
   lane :test_in_travis do
     test(
-      env_ci: true
-      travis: travis
+      env_ci: true,
+      travis: true 
     )
   end
 

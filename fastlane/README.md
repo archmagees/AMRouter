@@ -26,6 +26,11 @@ Runs all the tests
 fastlane ios code_coverage
 ```
 Run slather to generate a code coverage report
+### ios test_in_ci
+```
+fastlane ios test_in_ci
+```
+
 ### ios test_in_travis
 ```
 fastlane ios test_in_travis

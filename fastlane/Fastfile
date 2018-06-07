@@ -11,7 +11,9 @@ platform :ios do
 ############################################################
   desc "Runs all the tests"
   lane :test do |options|
-    env_ci = options[:env_ci]
+    env_ci    = options[:env_ci]
+    travis    = options[:travis]
+    circleci  = options[:circleci]
     scan(
       scheme: SCHEME,
       devices: "iPhone 7",
@@ -29,11 +31,14 @@ platform :ios do
   desc "Run slather to generate a code coverage report"
   lane :code_coverage do |options|
    	env_ci    = options[:env_ci]
+    travis    = options[:travis]
+    circleci  = options[:circleci]
   	slather(
          cobertura_xml: env_ci,
          html: !env_ci,
          show: !env_ci,
-         travis: env_ci,
+         travis: travis,
+         circleci: circleci;
          source_files: "#{PROJECT}/#{PROJECT}/*",
          output_directory: "fastlane/test_output/code_coverage/slather/",
          scheme: SCHEME,
@@ -45,12 +50,25 @@ platform :ios do
     )
   end
 
-  lane :test_in_travis do
+  lane :test_in_ci do
     test(
       env_ci: true
     )
   end
 
+  lane :test_in_circleci do
+    test(
+      env_ci: true
+      circleci: true
+    )
+  end
+
+  lane :test_in_travis do
+    test(
+      env_ci: true
+      travis: travis
+    )
+  end
 
 end
 

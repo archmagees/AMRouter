@@ -1,26 +1,43 @@
 PODS:
   - AMRouter (0.1.0)
-  - Nimble (7.1.1)
+  - Nimble (7.1.2)
   - OCMock (3.4.1)
   - Quick (1.3.0)
 
 DEPENDENCIES:
   - AMRouter (from `./`)
-  - Nimble
-  - OCMock
-  - Quick
+  - "Nimble (from `git@github.com:Quick/Nimble.git`)"
+  - "OCMock (from `git@github.com:erikdoe/ocmock.git`)"
+  - "Quick (from `git@github.com:Quick/Quick.git`)"
 
 EXTERNAL SOURCES:
   AMRouter:
     :path: "./"
+  Nimble:
+    :git: "git@github.com:Quick/Nimble.git"
+  OCMock:
+    :git: "git@github.com:erikdoe/ocmock.git"
+  Quick:
+    :git: "git@github.com:Quick/Quick.git"
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: 24e9b37f298c77a488d6ab63ea36e890fe0902f7
+    :git: "git@github.com:Quick/Nimble.git"
+  OCMock:
+    :commit: b9867f830a7a011bf2cd6d5a14840bb68216a11e
+    :git: "git@github.com:erikdoe/ocmock.git"
+  Quick:
+    :commit: 84ad2ad643382513ca34f0f2427e76cbe2be2f83
+    :git: "git@github.com:Quick/Quick.git"
 
 SPEC CHECKSUMS:
   AMRouter: c879923419afaecc7f64deafa8f5efe6acc23524
-  Nimble: 391f07782af4b37914f9bd7b2ffbb952731b8202
+  Nimble: 3835ba9f459daa6b347f8a8e110aaae8ca1920a8
   OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
-  Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
+  Quick: 37db81a2d4473d9f369136032768c341a2e0c03c
 
-PODFILE CHECKSUM: 449e90667f4390c9f1de16eb2ac5078a73de3c8d
+PODFILE CHECKSUM: 52dea066cb641370bb2f4253b5bfb6afa6c29c8f
 
 COCOAPODS: 1.5.3
 

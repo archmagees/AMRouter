@@ -8,9 +8,9 @@ target 'AMRouter' do
   pod 'AMRouter', :path => './'
   target 'AMRouterTests' do
       inherit! :search_paths
-      pod 'Quick'
-      pod 'Nimble'
-      pod 'OCMock'
+      pod 'Quick', :git => 'git@github.com:Quick/Quick.git'
+      pod 'Nimble', :git => 'git@github.com:Quick/Nimble.git'
+      pod 'OCMock', :git => 'git@github.com:erikdoe/ocmock.git'
   end
 end
 

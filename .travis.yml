@@ -19,7 +19,7 @@ script:
     - bundle exec fastlane test_in_travis
     - bundle exec pod lib lint
 after_success: 
-    - bash <(curl -s https://codecov.io/bash) -f ./fastlane/test_output/code_coverage/slather/cobertura.xml
+    - slather
 
 
 

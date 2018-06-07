@@ -1,0 +1,6 @@
+coverage_service: coveralls
+xcodeproj: AMRouter.xcodeproj
+scheme: AMRouter
+source_directory: AMRouter/AMRouter
+ignore:
+    - Pods/*

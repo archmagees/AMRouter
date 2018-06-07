@@ -1,5 +1,5 @@
-source "https://gems.ruby-china.org"
- 
+# source "https://gems.ruby-china.org"
+source 'https://rubygems.org'
 gem 'cocoapods'
 gem 'fastlane'
 gem 'slather'

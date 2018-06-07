@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name            = 'AMRouter'
   s.module_name     = 'AMRouter'
-  s.version         = '0.2.0'
+  s.version         = '0.3.0'
   s.summary         = 'AMRouter'
   s.description     = <<-DESC
                     This is AMRouter.

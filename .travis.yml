@@ -6,20 +6,11 @@ cache:
     cocoapods: true
     directories:
         - /home/travis/.rvm/
-    
-# before_install: 
-#     - rvm install 2.5.1
 bundler_args: --without=documentation
 podfile: Podfile
-
-# install:
-#     - bundle install --without=documentation
-#     - bundle exec pod install
 script:
     - bundle exec fastlane test_in_travis
     - bundle exec pod lib lint
-after_success: 
-    - slather
 
 
 

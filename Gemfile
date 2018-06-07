@@ -1,8 +1,8 @@
-# source "https://gems.ruby-china.org"
-source 'https://rubygems.org'
+source "https://gems.ruby-china.org"
 gem 'cocoapods'
 gem 'fastlane'
 gem 'slather'
+gem 'coveralls', require: false
 gem 'CFPropertyList', '2.3.6'
 gem 'xcode-install'
 

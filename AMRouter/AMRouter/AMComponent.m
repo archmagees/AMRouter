@@ -19,7 +19,10 @@ static AMComponent *sharedInstance = nil;
 
 @end
 
-@implementation AMComponent
+@implementation AMComponent {
+    dispatch_queue_t operate_target_queue;
+    dispatch_semaphore_t target_semaphore;
+}
 
 + (instancetype)sharedInstance {
     static dispatch_once_t onceToken;
@@ -34,6 +37,9 @@ static AMComponent *sharedInstance = nil;
     dispatch_once(&onceToken, ^{
         sharedInstance = [super allocWithZone:zone];
         sharedInstance.cachedTargets = [NSMutableDictionary dictionary];
+        sharedInstance->operate_target_queue =
+        dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        sharedInstance->target_semaphore = dispatch_semaphore_create(1);
     });
     return sharedInstance;
 }
@@ -48,27 +54,18 @@ static AMComponent *sharedInstance = nil;
                   classPrefix:(nullable NSString *)classPrefix
           componentNameSuffix:(nullable NSString *)suffix
                   shouldCache:(BOOL)shouldCache {
-    NSString *className =
-    [self classNameWithTargetName:targetName
-                      classPrefix:classPrefix
-                           suffix:suffix];
     
-    _Nullable id target = [[[self sharedInstance] cachedTargets] objectForKey:className];
-    
-    if (target) {
-        return target;
+    if (!targetName.length) {
+        return nil;
     }
     
-    Class targetClass = NSClassFromString(className);
+    NSString *className = [NSString stringWithFormat:@"%@%@%@",
+                           classPrefix ?: @"",
+                           targetName ?: @"",
+                           suffix ?: @"Component"];
     
-    target = [[[targetClass class] alloc] init];
-    
-    if (shouldCache) {
-        [[[self sharedInstance] cachedTargets] setObject:target
-                                                  forKey:className];
-    }
-
-    return target;
+    return [[self sharedInstance] targetForKey:className
+                                   shouldCache:shouldCache];
 }
 
 + (void)releaseCachedTarget:(__kindof NSObject *)target {
@@ -76,21 +73,46 @@ static AMComponent *sharedInstance = nil;
         return;
     }
     
-    [[[self sharedInstance] cachedTargets] removeObjectForKey:NSStringFromClass(target.class)];
-    
+    [[self sharedInstance] releaseTargetWithName:NSStringFromClass(target.class)];
 }
 
 #pragma mark - Private
 
-+ (NSString *)classNameWithTargetName:(NSString *)targetName
-                          classPrefix:(nullable NSString *)classPrefix
-                               suffix:(nullable NSString *)suffix {
-    NSAssert(targetName.length > 0, @"target name should not be empty");
-    NSString *className = [NSString stringWithFormat:@"%@%@%@",
-                           classPrefix ?: @"",
-                           targetName,
-                           suffix ?: @"Component"];
-    return className;
+- (nullable id)targetForKey:(NSString *)key
+                shouldCache:(BOOL)shouldCache {
+    
+    __block _Nullable id target = nil;
+    
+    
+    dispatch_sync(operate_target_queue, ^{
+        dispatch_semaphore_wait(self->target_semaphore,
+                                DISPATCH_TIME_NOW);
+        
+        target = [self.cachedTargets objectForKey:key];
+        
+        if (!target) {
+            Class targetClass = NSClassFromString(key);
+            target = [[[targetClass class] alloc] init];
+        }
+        
+        if (shouldCache && target) {
+            [self.cachedTargets setObject:target forKey:key];
+        }
+        
+        dispatch_semaphore_signal(self->target_semaphore);
+    });
+
+    return target;
+}
+
+- (void)releaseTargetWithName:(NSString *)targetNameKey {
+    dispatch_async(operate_target_queue, ^{
+        dispatch_semaphore_wait(self->target_semaphore, dispatch_time(DISPATCH_TIME_NOW, 3));
+        
+        [self.cachedTargets removeObjectForKey:targetNameKey];
+        
+        dispatch_semaphore_signal(self->target_semaphore);
+    });
 }
 
 @end

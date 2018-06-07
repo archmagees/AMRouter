@@ -8,6 +8,7 @@
 
 @import Quick;
 @import Nimble;
+@import OCMock;
 #import "AMComponent+Message.h"
 #import "MessageModule.h"
 #import "AMMessageComponent.h"
@@ -67,6 +68,18 @@ context(@"There is a component message", ^{
     it(@"if release target is nil, it will not crash", ^ {
         
         expectAction(^ {[AMComponent releaseCachedTarget:nil];}).toNot(raiseException());
+    });
+    
+    it(@"should return nil if target name is empty", ^ {
+        
+        id obj =
+        [AMComponent targetWithName:@""
+                        classPrefix:nil
+                componentNameSuffix:nil
+                        shouldCache:YES];
+        
+        expect(obj).to(beNil());
+        
     });
     
 #pragma clang diagnostic pop

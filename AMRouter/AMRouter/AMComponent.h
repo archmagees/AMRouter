@@ -10,30 +10,56 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^AMComponentCompletion)(NSDictionary *info);
-
 /**
  * @brief Create category files to each component.
  */
 @interface AMComponent : NSObject
 
-+ (instancetype)sharedInstance;
-
 /**
- * @brief Register your specific class prefix.
+ * @brief Get the component instance, and it is cached.
  * @discussion
- * This method should be invoked in the very beginning of the app.
+ * The instance's class name's format is like this:
+ * `ClassPrefix(if exists)+TargetName+Component`.
+ *
+ * @param targetName
+ * A string value which is a factor to composite a class name.
  *
  * @param classPrefix
- * The specific class prefix of your app. If it is nil or empty, means to clear
- * the class prefix.
+ * A string value indicates the class prefix of the customized module class,
+ * could be nil.
  *
- * @attention
- * If your module has class prefix then you should invoke this before using this
- * class. You can invoke it multiply if you have several different classPrefix.
- * You just invoke it before invoking `-targetWithName` method.
+ * @param suffix
+ * If your component class name is not end with `component`, maybe `module`,
+ * then you could set it as a different string, could be nil. For example, the
+ * return value's class name should be `AMShareComponent`, if you pass `Share`,
+ * `AM` and `nil` to the method, becasue the default suffix is `component`.
+ *
+ * @param shouldCache
+ * A boolean value indicates that the return value whether or not should be
+ * cached. Default is `NO`.
+ *
+ * @return
+ * An instance which class is `ClassPrefix+TargetName+ComponentNameSuffix`.
+ * Could be nil means there is no class which name is given.
  */
-+ (void)registerClassPrefix:(nullable NSString *)classPrefix;
++ (nullable id)targetWithName:(NSString *)targetName
+                  classPrefix:(nullable NSString *)classPrefix
+          componentNameSuffix:(nullable NSString *)suffix
+                  shouldCache:(BOOL)shouldCache;
+
+/**
+ * @brief Release the cached target.
+ *
+ * @param target
+ * An instance that has been cached before.
+ */
++ (void)releaseCachedTarget:(__kindof NSObject *)target;
+
+@end
+
+NS_ASSUME_NONNULL_END
+
+//typedef void(^AMComponentCompletion)(NSDictionary *info);
 
 /**
  * @brief Initialize an object by url.
@@ -49,33 +75,15 @@ typedef void(^AMComponentCompletion)(NSDictionary *info);
  *
  * @return
  * An object that initialized by the url, could be nil.
- */
-+ (nullable id)openUrl:(NSString *)url
-              userInfo:(nullable NSDictionary *)userInfo
-            completion:(nullable AMComponentCompletion)completion;
-
-/**
- * @brief Get the component instance, and it is cached.
- * @discussion
- * The instance's class name's format is like this:
- * `ClassPrefix(if exists)+TargetName+Component`.
  *
- * @param targetName
- * Indicates the return value class.
- *
- * @return
- * An instance which class is `ClassPrefix+TargetName+Component`.
+ * @todo
+ * Add url-scheme func later.
  */
-- (id)targetWithName:(NSString *)targetName;
+//+ (nullable id)openUrl:(NSString *)url
+//              userInfo:(nullable NSDictionary *)userInfo
+//            completion:(nullable AMComponentCompletion)completion;
 
-/**
- * @brief Release the cached target.
- *
- * @param targetName
- * Key for the cached target in dictionary.
- */
-- (void)releaseCachedTarget:(NSString *)targetName;
 
+@interface AMComponent (Depreated)
++ (void)registerClassPrefix:(nullable NSString *)classPrefix DEPRECATED_ATTRIBUTE;
 @end
-
-NS_ASSUME_NONNULL_END

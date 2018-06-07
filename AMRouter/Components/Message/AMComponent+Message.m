@@ -15,7 +15,10 @@ static NSString * const kTargetName = @"Message";
 @implementation AMComponent (Message)
 
 + (id<MessageComponentInterface>)message {
-    return [[self sharedInstance] targetWithName:kTargetName];
+    return [self targetWithName:kTargetName
+                    classPrefix:@"AM"
+            componentNameSuffix:nil
+                    shouldCache:YES];
 }
 
 @end

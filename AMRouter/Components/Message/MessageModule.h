@@ -1,5 +1,5 @@
 //
-//  MessageComponent.h
+//  MessageModule.h
 //  Example
 //
 //  Created by archmagees on 2018/06/05.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "MessageComponentInterface.h"
 
-@interface MessageComponent : NSObject <MessageComponentInterface>
+@interface MessageModule : NSObject <MessageComponentInterface>
 
 @end

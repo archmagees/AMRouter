@@ -19,7 +19,7 @@
 		8EDC787720C7C296001A3427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDC787620C7C296001A3427 /* Assets.xcassets */; };
 		8EDC787A20C7C296001A3427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EDC787820C7C296001A3427 /* LaunchScreen.storyboard */; };
 		8EDC787D20C7C296001A3427 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC787C20C7C296001A3427 /* main.m */; };
-		8EDC789D20C7C387001A3427 /* MessageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC789920C7C387001A3427 /* MessageComponent.m */; };
+		8EDC789D20C7C387001A3427 /* MessageModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC789920C7C387001A3427 /* MessageModule.m */; };
 		8EDC789E20C7C387001A3427 /* AMComponent+Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC789A20C7C387001A3427 /* AMComponent+Message.m */; };
 /* End PBXBuildFile section */
 
@@ -58,10 +58,10 @@
 		8EDC788220C7C296001A3427 /* AMRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDC788820C7C296001A3427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EDC789820C7C387001A3427 /* MessageComponentInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageComponentInterface.h; sourceTree = "<group>"; };
-		8EDC789920C7C387001A3427 /* MessageComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageComponent.m; sourceTree = "<group>"; };
+		8EDC789920C7C387001A3427 /* MessageModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModule.m; sourceTree = "<group>"; };
 		8EDC789A20C7C387001A3427 /* AMComponent+Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AMComponent+Message.m"; sourceTree = "<group>"; };
 		8EDC789B20C7C387001A3427 /* AMComponent+Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMComponent+Message.h"; sourceTree = "<group>"; };
-		8EDC789C20C7C387001A3427 /* MessageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageComponent.h; sourceTree = "<group>"; };
+		8EDC789C20C7C387001A3427 /* MessageModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModule.h; sourceTree = "<group>"; };
 		8EDC789F20C7C551001A3427 /* AMRouter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AMRouter.podspec; sourceTree = "<group>"; };
 		C4A5B7AE5C0D2F9AB7A03A6D /* Pods-AMRouterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMRouterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AMRouterTests/Pods-AMRouterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC8985E85ACED1480D3FAFAB /* Pods-AMRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMRouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AMRouter/Pods-AMRouter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 				8EDC789820C7C387001A3427 /* MessageComponentInterface.h */,
 				8EDC789B20C7C387001A3427 /* AMComponent+Message.h */,
 				8EDC789A20C7C387001A3427 /* AMComponent+Message.m */,
-				8EDC789C20C7C387001A3427 /* MessageComponent.h */,
-				8EDC789920C7C387001A3427 /* MessageComponent.m */,
+				8EDC789C20C7C387001A3427 /* MessageModule.h */,
+				8EDC789920C7C387001A3427 /* MessageModule.m */,
 				8EDB60D320C7EEA800EB2CBA /* AMMessageComponent.h */,
 				8EDB60D420C7EEA800EB2CBA /* AMMessageComponent.m */,
 			);
@@ -365,7 +365,7 @@
 			files = (
 				8EDB60D520C7EEA800EB2CBA /* AMMessageComponent.m in Sources */,
 				8EDC787220C7C294001A3427 /* ViewController.m in Sources */,
-				8EDC789D20C7C387001A3427 /* MessageComponent.m in Sources */,
+				8EDC789D20C7C387001A3427 /* MessageModule.m in Sources */,
 				8EDC787D20C7C296001A3427 /* main.m in Sources */,
 				8EDB60D220C7D3FE00EB2CBA /* AMComponent.m in Sources */,
 				8EDC786F20C7C294001A3427 /* AppDelegate.m in Sources */,

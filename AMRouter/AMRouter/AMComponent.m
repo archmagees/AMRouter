@@ -16,7 +16,6 @@ static AMComponent *sharedInstance = nil;
 @interface AMComponent ()
 
 @property (nonatomic, strong) NSMutableDictionary<NSString *, __kindof NSObject *> *cachedTargets;
-@property (nonatomic, copy, null_resettable) NSString *classPrefix;
 
 @end
 
@@ -45,24 +44,16 @@ static AMComponent *sharedInstance = nil;
 
 #pragma mark - Public
 
-+ (void)registerClassPrefix:(nullable NSString *)classPrefix {
-    // now it can be invoked multiply, it could be nil
-    [[self sharedInstance] setClassPrefix:classPrefix];
-}
-
-+ (nullable id)openUrl:(NSString *)url
-              userInfo:(nullable NSDictionary *)userInfo
-            completion:(nullable AMComponentCompletion)completion {
-    /// @todo: add later.
-    /// @warning return value is nil now.
-    return nil;
-}
-
-- (id)targetWithName:(NSString *)targetName {
++ (nullable id)targetWithName:(NSString *)targetName
+                  classPrefix:(nullable NSString *)classPrefix
+          componentNameSuffix:(nullable NSString *)suffix
+                  shouldCache:(BOOL)shouldCache {
+    NSString *className =
+    [self classNameWithTargetName:targetName
+                      classPrefix:classPrefix
+                           suffix:suffix];
     
-    NSString *className = [self classNameForTarget:targetName];
-    
-    _Nullable id target = self.cachedTargets[className];
+    _Nullable id target = [[[self sharedInstance] cachedTargets] objectForKey:className];
     
     if (target) {
         return target;
@@ -72,27 +63,36 @@ static AMComponent *sharedInstance = nil;
     
     target = [[[targetClass class] alloc] init];
     
-    self.cachedTargets[className] = target;
+    if (shouldCache) {
+        [[[self sharedInstance] cachedTargets] setObject:target
+                                                  forKey:className];
+    }
+
     return target;
 }
 
-
-- (void)releaseCachedTarget:(NSString *)targetName {
-    [self.cachedTargets removeObjectForKey:[self classNameForTarget:targetName]];
++ (void)releaseCachedTarget:(__kindof NSObject *)target {
+    NSAssert(target, @"target should not be nil, %s", __FUNCTION__);
+    
+    if (!target) {
+        return;
+    }
+    
+    [[[self sharedInstance] cachedTargets] removeObjectForKey:NSStringFromClass(target.class)];
+    
 }
 
 #pragma mark - Private
 
-- (NSString *)classNameForTarget:(NSString *)targetName {
-    return [NSString stringWithFormat:@"%@%@Component",
-            self.classPrefix, targetName];
-}
-
-- (NSString *)classPrefix {
-    if (!_classPrefix) {
-        _classPrefix = @"";
-    }
-    return _classPrefix;
++ (NSString *)classNameWithTargetName:(NSString *)targetName
+                          classPrefix:(nullable NSString *)classPrefix
+                               suffix:(nullable NSString *)suffix {
+    NSAssert(targetName.length > 0, @"target name should not be empty");
+    NSString *className = [NSString stringWithFormat:@"%@%@%@",
+                           classPrefix ?: @"",
+                           targetName,
+                           suffix ?: @"Component"];
+    return className;
 }
 
 @end

@@ -1,14 +1,14 @@
 //
-//  MessageComponent.m
+//  MessageModule.m
 //  Example
 //
 //  Created by archmagees on 2018/06/05.
 //  Copyright © 2018 archmagees. All rights reserved.
 //
 
-#import "MessageComponent.h"
+#import "MessageModule.h"
 
-@implementation MessageComponent
+@implementation MessageModule
 
 - (BOOL)notificationEnabled {
     return YES;

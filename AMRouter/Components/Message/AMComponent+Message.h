@@ -6,7 +6,8 @@
 //  Copyright © 2018 archmagees. All rights reserved.
 //
 
-#import <AMRouter/AMRouter.h>
+
+#import "AMComponent.h"
 #import "MessageComponentInterface.h"
 
 @interface AMComponent (Message)

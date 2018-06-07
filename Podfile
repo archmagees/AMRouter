@@ -5,9 +5,10 @@ use_frameworks!
 
 
 target 'AMRouter' do
-  pod 'AMRouter', :path => './'
+  
   target 'AMRouterTests' do
       inherit! :search_paths
+#      pod 'AMRouter', :path => './'
       pod 'Quick', :git => 'https://github.com/Quick/Quick.git'
       pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git'
       pod 'OCMock', :git => 'https://github.com/erikdoe/ocmock.git'

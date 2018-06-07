@@ -209,7 +209,6 @@
 				8EDC786620C7C294001A3427 /* Sources */,
 				8EDC786720C7C294001A3427 /* Frameworks */,
 				8EDC786820C7C294001A3427 /* Resources */,
-				4013D45D6DC8683EFECD567C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,24 +298,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4013D45D6DC8683EFECD567C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AMRouter/Pods-AMRouter-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AMRouter/AMRouter.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMRouter.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AMRouter/Pods-AMRouter-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		690ECDF5088C01E687641D65 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

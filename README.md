@@ -12,6 +12,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+iOS 9.0
+
 ## Installation
 
 AMRouter is available through [CocoaPods](https://cocoapods.org). To install
@@ -66,7 +68,10 @@ pod 'AMRouter'
    static NSString * const kTargetName = @"Message";
    @implementation AMComponent (Message)
    + (id<MessageComponentInterface>)message {
-       return [[self sharedInstance] targetWithName:kTargetName];
+       return [self targetWithName:kTargetName
+                       classPrefix:nil
+               componentNameSuffix:nil
+                       shouldCache:YES];
    }
    @end
    ```
@@ -90,7 +95,9 @@ pod 'AMRouter'
    pod 'XxxComponentInterface'
    ```
 
-   
+   You only need to import both `Interface` pod and `Component` pod in your main project.
+
+   You just need to import 1 `AnotherComponentInterface` pod in your `OneComponent` pod.
 
 ## Author
 

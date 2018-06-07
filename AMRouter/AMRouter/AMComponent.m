@@ -72,8 +72,6 @@ static AMComponent *sharedInstance = nil;
 }
 
 + (void)releaseCachedTarget:(__kindof NSObject *)target {
-    NSAssert(target, @"target should not be nil, %s", __FUNCTION__);
-    
     if (!target) {
         return;
     }

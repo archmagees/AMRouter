@@ -13,5 +13,6 @@
 @interface AMComponent (Message)
 
 + (id<MessageComponentInterface>)message;
++ (id<MessageComponentInterface>)messageModule;
 
 @end

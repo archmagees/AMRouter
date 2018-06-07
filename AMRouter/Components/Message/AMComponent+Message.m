@@ -21,6 +21,13 @@ static NSString * const kTargetName = @"Message";
                     shouldCache:YES];
 }
 
++ (id<MessageComponentInterface>)messageModule {
+    return [self targetWithName:kTargetName
+                    classPrefix:nil
+            componentNameSuffix:@"Module"
+                    shouldCache:NO];
+}
+
 @end
 
 NS_ASSUME_NONNULL_END

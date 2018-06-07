@@ -17,48 +17,59 @@ QuickSpecBegin(AMComponentSpec)
 context(@"There is a component message", ^{
     it(@"should get notification status is YES", ^ {
         
-        MessageModule *obj = [AMComponent message];
-        expect(obj).to(beAKindOf([MessageModule class]));
+        id<MessageComponentInterface> obj = [AMComponent message];
+        expect(obj).to(beAKindOf([AMMessageComponent class]));
         
-        expect(obj.notificationEnabled).to(beTrue());
-        expect(obj.unreadCount).to(equal(3));
+        expect(obj.unreadCount).to(equal(999));
         
     });
     
     it(@"should release the target after invoke method -release...", ^ {
         
-        MessageModule *obj1 = [AMComponent message];
-        MessageModule *obj2 = [AMComponent message];
+        id obj1 = [AMComponent message];
+        id obj2 = [AMComponent message];
         
+        // because it is cached!!!
         expect(obj1).to(beIdenticalTo(obj2));
+        expect(obj1).to(beAKindOf([AMMessageComponent class]));
         
         [AMComponent releaseCachedTarget:obj1];
         
-        MessageModule *obj3 = [AMComponent message];
-        expect(obj1).to(beAKindOf([MessageModule class]));
+        // not cached
+        id obj3 = [AMComponent messageModule];
+        id obj4 = [AMComponent messageModule];
+        
         expect(obj3).to(beAKindOf([MessageModule class]));
-        expect(obj3).toNot(beIdenticalTo(obj1));
+        expect(obj4).to(beAKindOf([MessageModule class]));
+        expect(obj3).toNot(beIdenticalTo(obj4));
     });
     
     it(@"register different class prefix", ^ {
         
-        AMMessageComponent *amObj = [AMComponent message];
+        id<MessageComponentInterface> amObj = [AMComponent message];
         expect(amObj).to(beAKindOf([AMMessageComponent class]));
-        expect(amObj.notificationEnabled).to(beFalse());
+        expect(amObj.unreadCount).to(equal(999));
         
-        MessageModule *nonClassPrefixObj = [AMComponent message];
+        id<MessageComponentInterface> nonClassPrefixObj = [AMComponent messageModule];
         
         expect(nonClassPrefixObj).to(beAKindOf([MessageModule class]));
-        
-        [AMComponent releaseCachedTarget:nonClassPrefixObj];
+        expect(nonClassPrefixObj.unreadCount).to(equal(3));
 
         
-        AMMessageComponent *classPrefixObj = [AMComponent message];
+        id<MessageComponentInterface> classPrefixObj = [AMComponent message];
+        // because this target is cached
         expect(classPrefixObj).to(beIdenticalTo(amObj));
         
-        expect(classPrefixObj.unreadCount).to(equal(999));
-        
     });
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
+    it(@"if release target is nil, it will not crash", ^ {
+        
+        expectAction(^ {[AMComponent releaseCachedTarget:nil];}).toNot(raiseException());
+    });
+    
+#pragma clang diagnostic pop
     
 });
 

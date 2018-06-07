@@ -20,10 +20,10 @@
     
     self.view.backgroundColor = UIColor.orangeColor;
     
-    BOOL enabled =
-    [[AMComponent message] notificationEnabled];
+    NSInteger count =
+    [[AMComponent message] unreadCount];
     
-    NSLog(@"is notification enabled: %@", enabled ? @"yes" : @"no");
+    NSLog(@"is notification enabled: %@", @(count));
 }
 
 

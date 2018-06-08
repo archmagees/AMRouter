@@ -46,24 +46,32 @@ pod 'AMRouter'
    @end
    ```
 
-   Now let the class you created in step 1 conform the protocol you just created, then it should be like this now:
+   Now let the class you created in **step 1** conform the protocol you just created, and implement it, then it should be like this now:
 
    ```objc
+   // MessageComponent.h
    #import <Foundation/Foundation.h>
    #import "MessageComponentInterface.h"
    @interface MessageComponent : NSObject <MessageComponentInterface>
    @end
+   // MessageComponent.m
+   #import "MessageComponent.h"
+   @implementation MessageComponent
+   - (BOOL)notificationEnabled {
+       return YES;
+   }
    ```
 
 3. Now, here comes to step 3, the very important one. Create a category file which class is `AMComponent` . And create a public class method, like this:
 
    ```objc
+   // AMComponent+Message.h
    #import <AMRouter/AMRouter.h>
    #import "MessageComponentInterface.h"
    @interface AMComponent (Message)
    + (id<MessageComponentInterface>)message;
    @end
-       
+   // AMComponent+Message.m    
    #import "AMComponent+Message.h"
    static NSString * const kTargetName = @"Message";
    @implementation AMComponent (Message)
@@ -76,28 +84,37 @@ pod 'AMRouter'
    @end
    ```
 
-4. Now create TWO pods:
+4. Now create **TWO** *private* pods, in this example, it should be like these:
+
+   - **`MessageComponentInterface`**
+   - **`MessageComponent`**
 
    1. One pod, it's name is `XxxComponentInterface`, it should contain these 3 files:
 
       `XxxComponentInterface.h`(it is also a protocol file), `AMComponent+Xxx.h` and`AMComponent+Xxx.m` . And let this pods be dependent on `AMRouter` .
 
-   2. Second one is `XxxComponent` , it should contain `XxxComponent.h` and `XxxComponent.m` and  any other necessary files which is in the component. And let this pod be dependent on `XxxComponentInterface` .
+   2. Second one is `XxxComponent` , it should contain `XxxComponent.h` and `XxxComponent.m` and  any other necessary files which is in the component. **And make sure that `XxxComponentInterface` **is in it's `.podspec`  dependency list, e.g.
 
-5. :tada:Finished!  Now you can import the function in another module now, import way is like this:
+      ```ruby
+      Pod::Spec.new do |s|
+        s.name            = 'MessageComponent'
+        s.dependency 'MessageComponentInterface'
+        ...
+      end
+      ```
+
+5. :tada:Finished!  Now you can import the function in another module now, import way is just like this:
 
    ```objc
    BOOL enabled = [[AMComponent message] notificationEnabled];
    ```
-   It is only need to be dependent on 1 pod in `Podfile` , that is:
+   And the `Podfile` in that module is only need **1** pod, that is:
 
    ```ruby
-   pod 'XxxComponentInterface'
+   pod 'MessageComponentInterface'
    ```
 
-   You only need to import both `Interface` pod and `Component` pod in your main project.
-
-   You just need to import 1 `AnotherComponentInterface` pod in your `OneComponent` pod.
+> **Don't forget to import both `MessageComponent` in your main project!**
 
 ## Author
 

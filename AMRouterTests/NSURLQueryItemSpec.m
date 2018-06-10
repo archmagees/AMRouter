@@ -14,9 +14,9 @@ QuickSpecBegin(NSURLQueryItemSpec)
 
 context(@"there is a url", ^{
     
-    it(@"fabric://modulename/actionname/subaction.htm?key1=value1&222=value2&key1=value1", ^ {
+    it(@"fabric://modulename/actionname/subaction.htm?key1=value1&:222=value2&key1=value1", ^{
         
-        NSString *url = @"fabric://modulename.com/v3/:actionname/:subaction.htm?key1=value1&222=value2&key1=:value1";
+        NSString *url = @"fabric://modulename.com/v3/:actionname/:subaction.htm?key1=value1&:222=value2&key1=:value1";
         NSURL *URL = [NSURL URLWithString:url];
         
         expect(URL.scheme).to(contain(@"fabric"));
@@ -35,7 +35,7 @@ context(@"there is a url", ^{
         NSLog(@"query items: %@", queryItems);
         
         expect(queryItems[0].name).to(contain(@"key1"));
-        expect(queryItems[1].name).to(contain(@"222"));
+        expect(queryItems[1].name).to(contain(@":222"));
         expect(queryItems[2].name).to(contain(@"key1"));
         
         expect(queryItems[2].value).to(contain(@":value1"));

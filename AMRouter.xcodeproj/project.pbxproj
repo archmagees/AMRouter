@@ -16,6 +16,9 @@
 		8EDB612020CA68E700EB2CBA /* NSURLQueryItemSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB611F20CA68E700EB2CBA /* NSURLQueryItemSpec.m */; };
 		8EDB612220CA9ADC00EB2CBA /* NSStringExtensionMethodsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB612120CA9ADC00EB2CBA /* NSStringExtensionMethodsSpec.m */; };
 		8EDB612520CCF8CA00EB2CBA /* NSString+AMTrick.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB612420CCF8CA00EB2CBA /* NSString+AMTrick.m */; };
+		8EDB612720CCFB4700EB2CBA /* NSStringAMTrickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB612620CCFB4700EB2CBA /* NSStringAMTrickSpec.m */; };
+		8EDB612A20CD082600EB2CBA /* AMUrlSchemeSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB612920CD082600EB2CBA /* AMUrlSchemeSynthesizer.m */; };
+		8EDB612C20CD2D0500EB2CBA /* AMUrlSchemeSynthesizerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB612B20CD2D0500EB2CBA /* AMUrlSchemeSynthesizerSpec.m */; };
 		8EDC786F20C7C294001A3427 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC786E20C7C294001A3427 /* AppDelegate.m */; };
 		8EDC787220C7C294001A3427 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC787120C7C294001A3427 /* ViewController.m */; };
 		8EDC787520C7C294001A3427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EDC787320C7C294001A3427 /* Main.storyboard */; };
@@ -52,6 +55,10 @@
 		8EDB612120CA9ADC00EB2CBA /* NSStringExtensionMethodsSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringExtensionMethodsSpec.m; sourceTree = "<group>"; };
 		8EDB612320CCF8C900EB2CBA /* NSString+AMTrick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AMTrick.h"; sourceTree = "<group>"; };
 		8EDB612420CCF8CA00EB2CBA /* NSString+AMTrick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+AMTrick.m"; sourceTree = "<group>"; };
+		8EDB612620CCFB4700EB2CBA /* NSStringAMTrickSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringAMTrickSpec.m; sourceTree = "<group>"; };
+		8EDB612820CD082600EB2CBA /* AMUrlSchemeSynthesizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMUrlSchemeSynthesizer.h; sourceTree = "<group>"; };
+		8EDB612920CD082600EB2CBA /* AMUrlSchemeSynthesizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMUrlSchemeSynthesizer.m; sourceTree = "<group>"; };
+		8EDB612B20CD2D0500EB2CBA /* AMUrlSchemeSynthesizerSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMUrlSchemeSynthesizerSpec.m; sourceTree = "<group>"; };
 		8EDC786A20C7C294001A3427 /* AMRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDC786D20C7C294001A3427 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8EDC786E20C7C294001A3427 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -133,6 +140,8 @@
 				8EDB60D120C7D3FE00EB2CBA /* AMComponent.m */,
 				8EDB612320CCF8C900EB2CBA /* NSString+AMTrick.h */,
 				8EDB612420CCF8CA00EB2CBA /* NSString+AMTrick.m */,
+				8EDB612820CD082600EB2CBA /* AMUrlSchemeSynthesizer.h */,
+				8EDB612920CD082600EB2CBA /* AMUrlSchemeSynthesizer.m */,
 			);
 			path = AMRouter;
 			sourceTree = "<group>";
@@ -183,6 +192,8 @@
 				8EDB60CC20C7C72900EB2CBA /* AMComponentSpec.m */,
 				8EDB611F20CA68E700EB2CBA /* NSURLQueryItemSpec.m */,
 				8EDB612120CA9ADC00EB2CBA /* NSStringExtensionMethodsSpec.m */,
+				8EDB612620CCFB4700EB2CBA /* NSStringAMTrickSpec.m */,
+				8EDB612B20CD2D0500EB2CBA /* AMUrlSchemeSynthesizerSpec.m */,
 			);
 			path = AMRouterTests;
 			sourceTree = "<group>";
@@ -374,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EDB612A20CD082600EB2CBA /* AMUrlSchemeSynthesizer.m in Sources */,
 				8EDB60D520C7EEA800EB2CBA /* AMMessageComponent.m in Sources */,
 				8EDC787220C7C294001A3427 /* ViewController.m in Sources */,
 				8EDC789D20C7C387001A3427 /* MessageModule.m in Sources */,
@@ -389,7 +401,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EDB612720CCFB4700EB2CBA /* NSStringAMTrickSpec.m in Sources */,
 				8EDB60CD20C7C72900EB2CBA /* AMComponentSpec.m in Sources */,
+				8EDB612C20CD2D0500EB2CBA /* AMUrlSchemeSynthesizerSpec.m in Sources */,
 				8EDB612220CA9ADC00EB2CBA /* NSStringExtensionMethodsSpec.m in Sources */,
 				8EDB612020CA68E700EB2CBA /* NSURLQueryItemSpec.m in Sources */,
 				8EDB60CB20C7C6BE00EB2CBA /* SwiftSpec.swift in Sources */,

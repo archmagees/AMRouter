@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (AMTrick)
 
-- (NSUInteger)countOfOccurrencesOfString:(NSString *)specSymbol;
+- (NSUInteger)am_countOfOccurrencesOfString:(NSString *)specSymbol;
 
 @end
 

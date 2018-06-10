@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation NSString (AMTrick)
 
-- (NSUInteger)countOfOccurrencesOfString:(NSString *)specSymbol {
+- (NSUInteger)am_countOfOccurrencesOfString:(NSString *)specSymbol {
     if (!self.length) {
         return 0;
     }
@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
         return 0;
     }
     
-    NSString *stringWithoutSymbol = [self stringByReplacingOccurrencesOfString:specSymbol withString:@""];
+    NSString *stringWithoutSymbol =
+    [self stringByReplacingOccurrencesOfString:specSymbol withString:@""];
     NSUInteger diff = self.length - stringWithoutSymbol.length;
     return diff;
 }

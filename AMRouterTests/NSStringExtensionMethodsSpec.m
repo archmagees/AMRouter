@@ -15,15 +15,13 @@ QuickSpecBegin(NSStringExtensionMethodsSpec)
 NSString * const kColonSymbol = @":";
 NSString * const kDelimiterSymbols = @"/?&.";
 
-context(@"there is a string", ^{
+context(@"there is a string `:12345`", ^{
     
     
-    __block NSString *url = nil;
+    NSString *url = @":12345";
     
-    it(@":12345", ^ {
-        
-        url = @":12345";
-        NSRange colonRange = [url rangeOfString:@":"];
+    it(@"will be replaced to 09876", ^{
+        NSRange colonRange = [url rangeOfString:kColonSymbol];
         expect(colonRange.location).to(equal(0));
         expect(colonRange.length).to(equal(1));
         
@@ -31,7 +29,7 @@ context(@"there is a string", ^{
         NSRange searchRange = NSMakeRange(NSMaxRange(colonRange), url.length);
         NSCharacterSet *delimiterCharacterSet = [NSCharacterSet characterSetWithCharactersInString:kDelimiterSymbols];
         
-        expectAction(^ {
+        expectAction(^{
             [url rangeOfCharacterFromSet:delimiterCharacterSet
                                  options:NSLiteralSearch
                                    range:searchRange];
@@ -56,8 +54,30 @@ context(@"there is a string", ^{
         
         expect(replacedUrl).to(contain(@"09876"));
         
-        
     });
+    
+    describe(@"divided by string ://", ^{
+        it(@"components count should be only 1", ^{
+            
+            NSArray<NSString *> *components = [url componentsSeparatedByString:@"://"];
+            
+            expect(components.count).to(equal(1));
+            expect(components[0]).to(contain(url));
+            
+        });
+    });
+    
+    describe(@"add it into an array and joined with a symbol", ^{
+        
+        it(@"", ^{
+            NSArray<NSString *> *components = [url componentsSeparatedByString:@"://"];
+            
+            NSString *synthesizedString = [components componentsJoinedByString:@"://"];
+            
+            expect(synthesizedString).toNot(contain(@"://"));
+        });
+    });
+    
 });
 
 QuickSpecEnd

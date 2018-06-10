@@ -16,7 +16,7 @@
 QuickSpecBegin(AMComponentSpec)
 
 context(@"There is a component message", ^{
-    it(@"should get notification status is YES", ^ {
+    it(@"should get notification status is YES", ^{
         
         id<MessageComponentInterface> obj = [AMComponent message];
         expect(obj).to(beAKindOf([AMMessageComponent class]));
@@ -25,7 +25,7 @@ context(@"There is a component message", ^{
         
     });
     
-    it(@"should release the target after invoke method -release...", ^ {
+    it(@"should release the target after invoke method -release...", ^{
         
         id obj1 = [AMComponent message];
         id obj2 = [AMComponent message];
@@ -45,7 +45,7 @@ context(@"There is a component message", ^{
         expect(obj3).toNot(beIdenticalTo(obj4));
     });
     
-    it(@"register different class prefix", ^ {
+    it(@"register different class prefix", ^{
         
         id<MessageComponentInterface> amObj = [AMComponent message];
         expect(amObj).to(beAKindOf([AMMessageComponent class]));
@@ -65,12 +65,12 @@ context(@"There is a component message", ^{
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnonnull"
-    it(@"if release target is nil, it will not crash", ^ {
+    it(@"if release target is nil, it will not crash", ^{
         
-        expectAction(^ {[AMComponent releaseCachedTarget:nil];}).toNot(raiseException());
+        expectAction(^{[AMComponent releaseCachedTarget:nil];}).toNot(raiseException());
     });
     
-    it(@"should return nil if target name is empty", ^ {
+    it(@"should return nil if target name is empty", ^{
         
         id obj =
         [AMComponent targetWithName:@""

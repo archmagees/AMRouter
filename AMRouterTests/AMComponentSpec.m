@@ -84,6 +84,17 @@ context(@"There is a component message", ^{
     
 #pragma clang diagnostic pop
     
+    it(@"increase unread count 3", ^{
+        id<MessageComponentInterface> obj = [AMComponent message];
+        
+        expect(obj.unreadCount).to(equal(999));
+        
+        [obj increaseUnreadCount:1];
+        expect(obj.unreadCount).to(equal(1000));
+        
+    });
+    
+    
 });
 
 QuickSpecEnd

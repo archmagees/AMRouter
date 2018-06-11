@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @discussion
  * Pattern format is just like the url components. That is:
  * `scheme://host/path.pathextension?query#fragment`, and usually the pattern
- * format is passed as `:action?key1=:value1&key2=:value2`.
+ * format is passed as `:scheme://:action?key1=:value1&key2=:value2`.
  *
  * @param pattern
  * A string value indicates the template format.

@@ -94,12 +94,6 @@ static NSString * const kSeparatorSymbols = @"://";
     
     NSMutableString *mutableString = [string mutableCopy];
     
-    const NSRange wholeRange = NSMakeRange(0, string.length);
-    __block NSRange colonRange = NSMakeRange(0, 1);
-    __block NSRange searchRange = NSMakeRange(0, wholeRange.length);
-    __block NSRange replaceRange = NSMakeRange(0, 2);
-    __block NSUInteger delimiterSymbolRangeLocation = 1;
-    
     __block BOOL formatError = NO;
     
     [replacements enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -109,13 +103,15 @@ static NSString * const kSeparatorSymbols = @"://";
             formatError = YES;
             *stop = YES;
         }
+        NSRange wholeRange = NSMakeRange(0, mutableString.length);
         
-        colonRange = [mutableString rangeOfString:kColonSymbol];
-        searchRange = NSMakeRange(NSMaxRange(colonRange), wholeRange.length);
+        NSRange colonRange = [mutableString rangeOfString:kColonSymbol];
+        NSRange searchRange = NSMakeRange(NSMaxRange(colonRange), wholeRange.length);
+        // failsafe, otherwise it will crash because of the length is out of
+        // the bound
         searchRange = NSIntersectionRange(searchRange, wholeRange);
         
-        
-        delimiterSymbolRangeLocation =
+        NSUInteger delimiterSymbolRangeLocation =
         [mutableString rangeOfCharacterFromSet:delimiterCharacterSet
                                        options:NSLiteralSearch
                                          range:searchRange].location;
@@ -123,11 +119,11 @@ static NSString * const kSeparatorSymbols = @"://";
         if (delimiterSymbolRangeLocation == NSNotFound) {
             delimiterSymbolRangeLocation = wholeRange.length;
         }
-        replaceRange =
+        NSRange replaceRange =
         NSMakeRange(colonRange.location, delimiterSymbolRangeLocation);
+        replaceRange = NSIntersectionRange(replaceRange, wholeRange);
         
         [mutableString replaceCharactersInRange:replaceRange withString:obj];
-    
     }];
     
     return  formatError ? nil : [mutableString copy];

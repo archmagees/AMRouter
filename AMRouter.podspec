@@ -1,3 +1,4 @@
+#!/usr/local/bin/ruby
 Pod::Spec.new do |s|
   s.name            = 'AMRouter'
   s.module_name     = 'AMRouter'
@@ -15,4 +16,6 @@ Pod::Spec.new do |s|
   s.source_files    = 'AMRouter/AMRouter/**/*.{h,m}'
 #   s.vendored_framework = "Carthage/Build/iOS/AMRouter.framework"
   s.requires_arc    = true
+
+  s.dependency 'CocoaLumberjack', '~>3.4.2'
 end

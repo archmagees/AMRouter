@@ -13,13 +13,13 @@
 QuickSpecBegin(AMUrlSchemeSynthesizerSpec)
 
 context(@"there is template", ^{
-    describe(@":scheme://:action", ^{
+    describe(@":scheme://:action?id=:id", ^{
         it(@"should become umeng://login after convert", ^{
             NSString *string =
-            [AMUrlSchemeSynthesizer synthesizedStringWithPattern:@":scheme://:action"
-                                                    replacements:@[ @"umeng", @"login" ]];
+            [AMUrlSchemeSynthesizer synthesizedStringWithPattern:@":scheme://:action?id=:id"
+                                                    replacements:@[ @"umeng", @"login", @"123" ]];
             
-            expect(string).to(contain(@"umeng://login"));
+            expect(string).to(contain(@"umeng://login?id=123"));
         });
     });
     
@@ -40,6 +40,7 @@ context(@"there is template", ^{
             
             expect(string).to(contain(@"scheme://login"));
         });
+        
         
         it(@"return nil when replacements count not pair with pattern", ^{
             NSString *string =

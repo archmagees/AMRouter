@@ -5,6 +5,7 @@ use_frameworks!
 
 
 target 'AMRouter' do
+    pod 'CocoaLumberjack', '~>3.4.2'
   
   target 'AMRouterTests' do
       inherit! :search_paths

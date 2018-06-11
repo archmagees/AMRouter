@@ -1,9 +1,16 @@
 PODS:
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Extensions (3.4.2):
+    - CocoaLumberjack/Default
   - Nimble (7.1.2)
   - OCMock (3.4.1)
   - Quick (1.3.0)
 
 DEPENDENCIES:
+  - CocoaLumberjack
   - Nimble (from `https://github.com/Quick/Nimble.git`)
   - OCMock (from `https://github.com/erikdoe/ocmock.git`)
   - Quick (from `https://github.com/Quick/Quick.git`)
@@ -28,11 +35,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Quick/Quick.git
 
 SPEC CHECKSUMS:
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Nimble: 4475e230ee4219b6c1e39044086c71249c6a039e
   OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
   Quick: 37db81a2d4473d9f369136032768c341a2e0c03c
 
-PODFILE CHECKSUM: 4b773f49e6c91372c6657d7354c7a5ddfd88f00e
+PODFILE CHECKSUM: 35b9f396d3af09fa71df891429aa07a525eea8f5
 
 COCOAPODS: 1.5.3
 

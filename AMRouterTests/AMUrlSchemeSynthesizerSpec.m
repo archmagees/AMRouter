@@ -38,7 +38,7 @@ context(@"there is template", ^{
             [AMUrlSchemeSynthesizer synthesizedStringWithPattern:pattern
                                                     replacements:@[ @"login" ]] ;
             
-            expect(string).to(contain(@"scheme://login"));
+            expect(string).to(match(@"scheme://login"));
         });
         
         
@@ -54,6 +54,7 @@ context(@"there is template", ^{
                                                     replacements:
              @[ @"", @"", @"" ]];
             
+            expect(string).to(beNil());
             
         });
         

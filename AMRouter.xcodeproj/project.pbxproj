@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		08487ED26C85DCE8CD12A028 /* Pods_AMRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15739CBAC9C87DFC97D7132B /* Pods_AMRouter.framework */; };
 		20EB12DE1B6F47335102123D /* Pods_AMRouterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CB695E91B9E9101246A87 /* Pods_AMRouterTests.framework */; };
+		8E2199D420CEBEF0006EDB02 /* NSDictionarySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2199D320CEBEEF006EDB02 /* NSDictionarySpec.m */; };
+		8EC78B542101F71600C8DEA7 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC78B532101F71600C8DEA7 /* Component.swift */; };
 		8EDB60CB20C7C6BE00EB2CBA /* SwiftSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60CA20C7C6BE00EB2CBA /* SwiftSpec.swift */; };
 		8EDB60CD20C7C72900EB2CBA /* AMComponentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60CC20C7C72900EB2CBA /* AMComponentSpec.m */; };
 		8EDB60D220C7D3FE00EB2CBA /* AMComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB60D120C7D3FE00EB2CBA /* AMComponent.m */; };
@@ -44,6 +46,9 @@
 		214DF5B71F3D612A1855B26E /* Pods-AMRouterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMRouterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AMRouterTests/Pods-AMRouterTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D8F68259374D8D26C761A42 /* Pods-AMRouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMRouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-AMRouter/Pods-AMRouter.release.xcconfig"; sourceTree = "<group>"; };
 		8E2199D020CE53A7006EDB02 /* AMMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMMacro.h; sourceTree = "<group>"; };
+		8E2199D320CEBEEF006EDB02 /* NSDictionarySpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDictionarySpec.m; sourceTree = "<group>"; };
+		8EC78B522101F71600C8DEA7 /* AMRouter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMRouter-Bridging-Header.h"; sourceTree = "<group>"; };
+		8EC78B532101F71600C8DEA7 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		8EDB60C920C7C6BE00EB2CBA /* AMRouterTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMRouterTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EDB60CA20C7C6BE00EB2CBA /* SwiftSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSpec.swift; sourceTree = "<group>"; };
 		8EDB60CC20C7C72900EB2CBA /* AMComponentSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMComponentSpec.m; sourceTree = "<group>"; };
@@ -123,6 +128,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8E51B35220E4B57000F706FF /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC789820C7C387001A3427 /* MessageComponentInterface.h */,
+				8EDC789B20C7C387001A3427 /* AMComponent+Message.h */,
+				8EDC789A20C7C387001A3427 /* AMComponent+Message.m */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		8E51B35320E4B57600F706FF /* PodA */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC789C20C7C387001A3427 /* MessageModule.h */,
+				8EDC789920C7C387001A3427 /* MessageModule.m */,
+			);
+			path = PodA;
+			sourceTree = "<group>";
+		};
+		8E51B35420E4B58100F706FF /* PodB */ = {
+			isa = PBXGroup;
+			children = (
+				8EDB60D320C7EEA800EB2CBA /* AMMessageComponent.h */,
+				8EDB60D420C7EEA800EB2CBA /* AMMessageComponent.m */,
+			);
+			path = PodB;
+			sourceTree = "<group>";
+		};
 		8EDB60C820C7C68D00EB2CBA /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +177,8 @@
 				8EDB612820CD082600EB2CBA /* AMUrlSchemeSynthesizer.h */,
 				8EDB612920CD082600EB2CBA /* AMUrlSchemeSynthesizer.m */,
 				8E2199D020CE53A7006EDB02 /* AMMacro.h */,
+				8EC78B532101F71600C8DEA7 /* Component.swift */,
+				8EC78B522101F71600C8DEA7 /* AMRouter-Bridging-Header.h */,
 			);
 			path = AMRouter;
 			sourceTree = "<group>";
@@ -196,6 +231,7 @@
 				8EDB612120CA9ADC00EB2CBA /* NSStringExtensionMethodsSpec.m */,
 				8EDB612620CCFB4700EB2CBA /* NSStringAMTrickSpec.m */,
 				8EDB612B20CD2D0500EB2CBA /* AMUrlSchemeSynthesizerSpec.m */,
+				8E2199D320CEBEEF006EDB02 /* NSDictionarySpec.m */,
 			);
 			path = AMRouterTests;
 			sourceTree = "<group>";
@@ -211,13 +247,9 @@
 		8EDC789720C7C387001A3427 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				8EDC789820C7C387001A3427 /* MessageComponentInterface.h */,
-				8EDC789B20C7C387001A3427 /* AMComponent+Message.h */,
-				8EDC789A20C7C387001A3427 /* AMComponent+Message.m */,
-				8EDC789C20C7C387001A3427 /* MessageModule.h */,
-				8EDC789920C7C387001A3427 /* MessageModule.m */,
-				8EDB60D320C7EEA800EB2CBA /* AMMessageComponent.h */,
-				8EDB60D420C7EEA800EB2CBA /* AMMessageComponent.m */,
+				8E51B35220E4B57000F706FF /* Interface */,
+				8E51B35320E4B57600F706FF /* PodA */,
+				8E51B35420E4B58100F706FF /* PodB */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -275,6 +307,7 @@
 				TargetAttributes = {
 					8EDC786920C7C294001A3427 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0940;
 					};
 					8EDC788120C7C296001A3427 = {
 						CreatedOnToolsVersion = 9.3;
@@ -415,6 +448,7 @@
 				8EDB60D220C7D3FE00EB2CBA /* AMComponent.m in Sources */,
 				8EDC786F20C7C294001A3427 /* AppDelegate.m in Sources */,
 				8EDC789E20C7C387001A3427 /* AMComponent+Message.m in Sources */,
+				8EC78B542101F71600C8DEA7 /* Component.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +460,7 @@
 				8EDB60CD20C7C72900EB2CBA /* AMComponentSpec.m in Sources */,
 				8EDB612C20CD2D0500EB2CBA /* AMUrlSchemeSynthesizerSpec.m in Sources */,
 				8EDB612220CA9ADC00EB2CBA /* NSStringExtensionMethodsSpec.m in Sources */,
+				8E2199D420CEBEF0006EDB02 /* NSDictionarySpec.m in Sources */,
 				8EDB612020CA68E700EB2CBA /* NSURLQueryItemSpec.m in Sources */,
 				8EDB60CB20C7C6BE00EB2CBA /* SwiftSpec.swift in Sources */,
 			);
@@ -576,6 +611,7 @@
 			baseConfigurationReference = CC8985E85ACED1480D3FAFAB /* Pods-AMRouter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P82ZK576JR;
 				INFOPLIST_FILE = AMRouter/Info.plist;
@@ -586,6 +622,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.archmagees.AMRouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMRouter/AMRouter/AMRouter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -595,6 +634,7 @@
 			baseConfigurationReference = 4D8F68259374D8D26C761A42 /* Pods-AMRouter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P82ZK576JR;
 				INFOPLIST_FILE = AMRouter/Info.plist;
@@ -605,6 +645,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.archmagees.AMRouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMRouter/AMRouter/AMRouter-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -613,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4A5B7AE5C0D2F9AB7A03A6D /* Pods-AMRouterTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -637,6 +680,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 214DF5B71F3D612A1855B26E /* Pods-AMRouterTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

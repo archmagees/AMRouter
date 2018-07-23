@@ -21,6 +21,7 @@ static NSUInteger unreadCount = 999;
 }
 
 - (void)increaseUnreadCount:(NSInteger)count {
+    
     unreadCount += count;
 }
 

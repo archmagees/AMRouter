@@ -22,8 +22,9 @@
     
     NSInteger count =
     [[AMComponent message] unreadCount];
+    [[AMComponent message] unreadCount];
     
-    [AMComponent message] 
+    [AMComponent message]
     
     
     NSLog(@"is notification enabled: %@", @(count));

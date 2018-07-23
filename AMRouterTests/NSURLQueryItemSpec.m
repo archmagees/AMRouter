@@ -76,6 +76,21 @@ context(@"url", ^{
         
     });
     
+    describe(@"without scheme part", ^{
+        
+        it(@"path components should contain host part", ^{
+            NSString *urlStringWithoutScheme = @"mission/login?id=:id";
+            NSURL *URL = [NSURL URLWithString:urlStringWithoutScheme];
+            expect(URL.pathComponents).to(contain(@"mission"));
+            expect(URL.pathComponents).toNot(contain(@"/"));
+            expect(URL.pathComponents[0]).to(contain(@"mission"));
+            expect(URL.pathComponents[0]).toNot(contain(@"/"));
+            
+        });
+        
+        
+    });
+    
     
     
     

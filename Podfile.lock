@@ -8,40 +8,34 @@ PODS:
   - CocoaLumberjack/Extensions (3.4.2):
     - CocoaLumberjack/Default
   - Nimble (8.0.4)
-  - OCMock (3.4.1)
+  - OCMock (3.5)
   - Quick (2.2.0)
 
 DEPENDENCIES:
   - AMRouter (from `./`)
   - CocoaLumberjack (~> 3.4.2)
   - Nimble
-  - OCMock (from `https://github.com/erikdoe/ocmock.git`)
+  - OCMock
   - Quick
 
 SPEC REPOS:
   trunk:
     - CocoaLumberjack
     - Nimble
+    - OCMock
     - Quick
 
 EXTERNAL SOURCES:
   AMRouter:
     :path: "./"
-  OCMock:
-    :git: https://github.com/erikdoe/ocmock.git
-
-CHECKOUT OPTIONS:
-  OCMock:
-    :commit: b9867f830a7a011bf2cd6d5a14840bb68216a11e
-    :git: https://github.com/erikdoe/ocmock.git
 
 SPEC CHECKSUMS:
   AMRouter: e915b7fef5b4e9e358a2566bca890fa440e63ca2
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
-  OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
+  OCMock: 4ab4577fc941af31f4a0398f6e7e230cf21fc72a
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
 
-PODFILE CHECKSUM: 728902c59af4fa70fde58e055f2d1be5a733ca5f
+PODFILE CHECKSUM: 8b6ff0f38111c5f739834f27d979992d37fb45d8
 
 COCOAPODS: 1.8.4

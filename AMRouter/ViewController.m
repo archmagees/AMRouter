@@ -24,9 +24,6 @@
     [[AMComponent message] unreadCount];
     [[AMComponent message] unreadCount];
     
-    [AMComponent message]
-    
-    
     NSLog(@"is notification enabled: %@", @(count));
     
 }

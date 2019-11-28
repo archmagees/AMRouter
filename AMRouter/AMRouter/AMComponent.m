@@ -86,7 +86,7 @@ static AMComponent *sharedInstance = nil;
     
     dispatch_sync(operate_target_queue, ^{
         dispatch_semaphore_wait(self->target_semaphore,
-                                DISPATCH_TIME_NOW);
+                                dispatch_time(DISPATCH_TIME_NOW, 3));
         
         target = [self.cachedTargets objectForKey:key];
         

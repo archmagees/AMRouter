@@ -8,14 +8,20 @@
 
 #import "MessageModule.h"
 
+static NSUInteger unreadCount = 3;
+
 @implementation MessageModule
 
 - (BOOL)notificationEnabled {
     return YES;
 }
 
-- (NSInteger)unreadCount {
-    return 3;
+- (NSUInteger)unreadCount {
+    return unreadCount;
+}
+
+- (void)increaseUnreadCount:(NSInteger)count {
+    unreadCount += count;
 }
 
 @end

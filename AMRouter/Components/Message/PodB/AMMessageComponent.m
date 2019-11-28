@@ -8,14 +8,21 @@
 
 #import "AMMessageComponent.h"
 
+static NSUInteger unreadCount = 999;
+
 @implementation AMMessageComponent
 
 - (BOOL)notificationEnabled {
     return NO;
 }
 
-- (NSInteger)unreadCount {
-    return 999;
+- (NSUInteger)unreadCount {
+    return unreadCount;
+}
+
+- (void)increaseUnreadCount:(NSInteger)count {
+    
+    unreadCount += count;
 }
 
 @end
